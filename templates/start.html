@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <link rel="stylesheet" href='/static/main.css' />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet"> 
+        <title>KINIFY</title>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        
+        <script type="text/javascript">
+            function not_loading(){
+                $("#loading").hide();     
+            }
+        </script>
+
+        <script type="text/javascript">
+            function loading(){
+                $("#loading").show();
+                $("#content").hide();       
+            }
+        </script>
+    </head>
+    
+    <body onload="not_loading()">
+        <div id="content">
+            <br>
+            <h1>Welcome to Kinify!</h1>
+            <p>Giving you music recommendations, based on your favourite fictional characters.</p>
+            <form action="{{ url_for('result') }}" method="post">
+                <label for="character">Enter a character's name down below!</label><br>
+                <br>
+                <input type="text" id="character" name="character"><br>
+                <br>
+                <button type="submit" value="Submit" onclick="loading()">Generate!</button>
+            </form>
+        </div>
+        <div id="loading"><h1>GENERATING...</h1></div>
+    </body>
+</html>

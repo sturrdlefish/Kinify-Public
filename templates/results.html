@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <link rel="stylesheet" href='/static/main.css' />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet"> 
+        <title>KINIFY</title>
+    </head>
+    
+    <body>
+        <h1>Results</h1>
+        <p>People who like {{ character }} also like:</p>
+        <ol>
+            {% for song in songs %}
+            <li>{{ song }}</li><br>
+            {% endfor %}
+        </ol><br>
+        <p><a href="{{ url_for('start') }}" class="button">Generate Another!</a></p>>
+    </body>
+</html>
